@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2 class="text-center">Mi Lista de Tareas</h2>
+  
+    <!-- Input para agregar tareas -->
+    <div class="input-group my-4">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nueva tarea"
+        [(ngModel)]="newTask"
+      />
+      <button class="btn btn-success" (click)="addTask()">Agregar</button>
+    </div>
+  
+    <!-- Lista de tareas -->
+    <ul class="list-group">
+      <li
+        *ngFor="let task of tasks; let i = index"
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        {{ task }}
+        <button class="btn btn-danger btn-sm" (click)="removeTask(i)">
+          Eliminar
+        </button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,19 @@
+.footer {
+    background-color: #343a40; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  .footer a:hover {
+    color: #17a2b8; /* Color azul al pasar el mouse */
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2); /* Efecto de zoom al pasar el mouse */
+  }
+  
