@@ -1,12 +1,67 @@
+/* Estilo general */
+body {
+  background-color: #f9f9f9;
+  font-family: "Arial", sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 600px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Título */
 h2 {
-    color: #28a745;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Input y botón */
+.input-group .form-control {
+  border-radius: 8px;
+}
+
+.input-group .btn-success {
+  border-radius: 8px;
+}
+
+/* Lista de tareas */
+.list-group-item {
+  background: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.list-group-item:hover {
+  transform: translateY(-2px);
+  background: #e8f6ef;
+}
+
+/* Botones */
+button {
+  border-radius: 8px;
+}
+
+button.btn-danger:hover {
+  background-color: #ff6b6b;
+}
+
+button.btn-outline-danger {
+  border: 2px solid #eb2f06;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+  .list-group-item {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .input-group {
-    max-width: 600px;
-    margin: 0 auto;
+
+  .list-group-item .d-flex {
+    margin-bottom: 10px;
   }
-  ul {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
+}

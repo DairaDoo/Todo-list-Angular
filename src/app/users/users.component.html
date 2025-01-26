@@ -1,0 +1,48 @@
+<div class="container py-4">
+    <h1 class="text-center mb-4">Lista de Usuarios</h1>
+  
+    <!-- Indicador de carga -->
+    <div *ngIf="isLoading; else userList" class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p class="mt-3">Cargando usuarios, por favor espera...</p>
+    </div>
+  
+    <!-- Lista de usuarios -->
+    <ng-template #userList>
+      <div *ngIf="users.length > 0; else noUsers" class="row g-4">
+        <!-- Tarjetas de usuario -->
+        <div *ngFor="let user of users" class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <div class="card-body d-flex align-items-center">
+              <img
+                [src]="user.picture.thumbnail"
+                alt="Imagen del usuario"
+                class="rounded-circle me-3"
+                width="60"
+                height="60"
+              />
+              <div>
+                <h5 class="card-title mb-1">{{ user.name.first }} {{ user.name.last }}</h5>
+                <p class="card-text text-muted small">{{ user.email }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  
+    <!-- Mensaje cuando no hay usuarios -->
+    <ng-template #noUsers>
+      <div class="alert alert-warning text-center" role="alert">
+        No se encontraron usuarios.
+      </div>
+    </ng-template>
+  
+    <!-- Botón para recargar usuarios -->
+    <div class="text-center mt-4">
+      <button class="btn btn-primary" (click)="fetchUsers()">Recargar Usuarios</button>
+    </div>
+  </div>
+  
